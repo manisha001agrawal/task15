@@ -1,0 +1,16 @@
+---
+# tasks file for myapache
+- package:
+       name:
+          - "httpd"
+          - "php"
+       state: present
+- copy:
+       src: "code.php"
+       dest: "/var/www/html/task15.php"
+- service:
+       name: "{{ item }}"
+       state: restarted
+  with_items:
+      - "httpd"
+      - "php-fpm"
