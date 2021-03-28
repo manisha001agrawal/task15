@@ -1,0 +1,6 @@
+- hosts: test
+  roles:
+    - role: "myapache"
+- hosts: haproxy
+  roles:
+    - role: "myloadbalancer"
